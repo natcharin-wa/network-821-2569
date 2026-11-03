@@ -1,0 +1,42 @@
+docker -v  // เช็ค version
+docker ps --all  // เช็คว่ามี container อะไรในเครื่องเราบ้าง
+docker run hello-world  //
+// CI/CD  
+cls  // clear screen
+docker run busybox echo 'Hello World in docker'  //
+docker run busybox ls  //
+docker run busybox ping google.com  // รันค้าง
+docker exec -it 28351dadce9f sh //เข้าใน container
+docker exec -it 28351dadce9f bash  //
+docker run nginx  //
+docker exec -it (conId) sh  // run ของ nginx
+docker stop (conId)
+docker remove (conId)
+docker run -p 80:80 nginx  //
+docker run -p 9000:80 nginx  //
+docker run -d -p 8000:80 nginx  //
+docker system prune // !
+docker system info //
+docker system df //
+docker system events //
+docker images //
+docker images ls //
+docker image prune -all // !
+docker pull wordpress
+docker pull mysql:5.7
+docker pull phpmyadmin/phymyadmin
+
+**Create Network
+
+docker network create wordpress
+docker network ls
+
+docker run --name mysql --network wordpress -e  MYSQL_ROOT_PASSWORD
+
+wordpress pass: p#sU!zCLh&3mzNCO@5
+
+docker volume create wp_volume
+docker network create wordpress02
+docker volume create mysql_volume   
+
+docker run -d --name mysql02 --network wordpress02 -v mysql_volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=1111 -e MYSQL_DATABASE=wordpress02_db -e MYSQL_USER=wordpress -e MYSQL_PASSWORD=wordpress  mysql:5.7

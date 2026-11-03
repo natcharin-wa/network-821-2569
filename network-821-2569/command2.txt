@@ -1,0 +1,21 @@
+kubectl apply -f .
+kubectl apply -f .\sample-pod.yml
+kubectl get pods  //
+kubectl delete all --all
+kubectl delete pods client-deployment-77659f7f9c-dq99p // Name
+kubectl delete deployments client-deployment
+kubectl get all
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.15.1/deploy/static/provider/cloud/deploy.yaml
+
+kubectl get pods -n ingress-nginx
+
+Add-Content -Path C:\Windows\System32\drivers\etc\hosts -Value "`n127.0.0.1todo.com"
+kubectl get svc
+kubectl get ingress
+kubectl get svc
+kubectl get ingress
+kubectl get pvc
+
+kubectl apply -f .\mongo-pvc.yml
+
